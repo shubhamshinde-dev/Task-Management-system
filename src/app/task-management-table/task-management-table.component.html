@@ -1,0 +1,53 @@
+<div class="container-fluid mt-4">
+    <div class="header mt-4"><span>Task Management System</span></div>
+    <div class="card">
+        <p-table [value]="tasks">
+            <ng-template pTemplate="header">
+                <tr>
+                    <th pSortableColumn="title" class="fixed-width headertable">
+                        Title <p-sortIcon field="title" />
+                    </th>
+                    <th pSortableColumn="status" class="fixed-width headertable">
+                        Status <p-sortIcon field="status" />
+                    </th>
+                    <th pSortableColumn="priority" class="fixed-width headertable">
+                        Priority <p-sortIcon field="priority" />
+                    </th>
+                    <th pSortableColumn="dueDate" class="fixed-width headertable">
+                        Start Date <p-sortIcon field="dueDate" />
+                    </th>
+                    <th pSortableColumn="dueDate" class="fixed-width headertable">
+                        End Date <p-sortIcon field="dueDate" />
+                    </th>
+                    <th pSortableColumn="action" class="fixed-width headertable">
+                        Action 
+                    </th>
+                </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-task>
+                <tr>
+                    <td class="fixed-width">{{ task.title }}</td>
+                    <td class="fixed-width">{{ task.status }}</td>
+                    <td class="fixed-width">{{ task.priority }}</td>
+                    <td class="fixed-width">{{ task.startDate }}</td>
+                    <td class="fixed-width">{{ task.dueDate }}</td>
+                    <td class="fixed-width">
+                        <div class="button-container" >
+                            <button class="button"(click)="editDialog(task.id )"  >
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                      
+                            <button class="button" (click)="viewDialog(task.id )" >
+                                <i class="bi bi-eye"></i>
+                            </button>
+                            <button class="button" (click)="addDialog('add')" >
+                                <i class="bi bi-plus"></i>
+                            </button>
+                          </div>
+                          
+                    </td>
+                </tr>
+            </ng-template>
+        </p-table>
+    </div>
+</div>

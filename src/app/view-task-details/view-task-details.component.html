@@ -1,0 +1,43 @@
+<div class="container-fluid">
+    <div class="header mt-4"><span>Task Details</span></div>
+    <p-divider />
+    <div *ngIf="taskDetails" class="container content-container">
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Title:</strong> {{ taskDetails.title }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Status:</strong> {{ taskDetails.status }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <p><strong>Priority:</strong> {{ taskDetails.priority }}</p>
+        </div>
+        <div class="col-md-6">
+          <p><strong>Start Date:</strong> {{ taskDetails.startDate }}</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+            <p><strong>End Date:</strong> {{ taskDetails.dueDate }}</p>
+          </div>
+        <div class="col-md-6">
+          <p><strong>Assigned To:</strong> {{ taskDetails.assignedTo }}</p>
+        </div>
+      
+      </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <p><strong>Description:</strong> {{ taskDetails.description }}</p>
+          </div>
+    </div>
+
+    </div>
+    <p-divider />
+    <div class="button-container">
+        <button class="button" (click)="closeViewTaskDetails()">Close</button>
+      </div>
+  </div>
+  
